@@ -1,0 +1,2 @@
+sqoop import --connect jdbc:mysql://quickstart:3306/retail_db --username retail_dba --password cloudera --table departments \
+--target-dir /user/cloudera/ejercicios_sqoop/ejercicio1 --fields-terminated-by '|' --lines-terminated-by '\n' -m 4
