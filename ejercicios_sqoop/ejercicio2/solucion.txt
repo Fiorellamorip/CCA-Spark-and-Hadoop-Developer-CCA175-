@@ -1,0 +1,11 @@
+hdfs dfs -mkdir /user/cloudera/ejercicios_sqoop/ejercicio2
+hdfs dfs -mkdir /user/cloudera/ejercicios_sqoop/ejercicio2/input
+sudo vi updated_departments.csv
+hdfs dfs -put  updated_departments.csv /user/cloudera/ejercicios_sqoop/ejercicio2/input
+
+#Now export this data from hdfs to mysql retaildb.departments table. During upload make sure existing department will just updated and new #departments needs to be inserted.
+
+sqoop export --connect jdbc:mysql://quickstart:3306/retail_db --username retail_dba --password cloudera --batch --table departments --update-key department_id --update-mode allowinsert --export-dir /user/cloudera/ejercicios_sqoop/ejercicio2/input --input-fields-terminated-by ',' --lines-terminated-by '\n'  -m 4
+
+
+sqoop export --connect jdbc:mysql://quickstart:3306/retail_db --username retail_dba --password cloudera --batch --table departments --update-key department_id --update-mode updateonly --export-dir /user/cloudera/ejercicios_sqoop/ejercicio2/input --input-fields-terminated-by ',' --lines-terminated-by '\n'  -m 4
