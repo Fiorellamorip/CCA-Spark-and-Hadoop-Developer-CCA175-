@@ -1,0 +1,27 @@
+CORRECT TEXT
+Problem Scenario 14 : You have been given following mysql database details as well as other info.
+user=retail_dba
+password=cloudera
+database=retail_db
+jdbc URL = jdbc:mysql://quickstart:3306/retail_db
+Please accomplish following activities.
+1. Create a csv file named updated_departments.csv with the following contents in local file system.
+updated_departments.csv
+2 ,fitness
+3 ,footwear
+1 2,fathematics
+1 3,fcience
+1 4,engineering
+1 000,management
+2. Upload this csv file to hdfs filesystem,
+3. Now export this data from hdfs to mysql retaildb.departments table. During upload make sure existing department will just updated and new departments needs to be inserted.
+4. Now update updated_departments.csv file with below content.
+2 ,Fitness
+3 ,Footwear
+1 2,Fathematics
+1 3,Science
+1 4,Engineering
+1 000,Management
+2 000,Quality Check
+5. Now upload this file to hdfs.
+6. Now export this data from hdfs to mysql retail_db.departments table. During upload make sure existing department will just updated and no new departments needs to be inserted.
