@@ -1,5 +1,5 @@
-#Write a Spark program, which will join the data based on first and last name and save the joined results in following format,  
-#first.Last.technology.salary
+//Write a Spark program, which will join the data based on first and last name and save the joined results in following format,  
+//first.Last.technology.salary
 val tech=spark.read.format("csv").option("header", "true").load("/user/cloudera/escenario45/spark12/technology.txt");
 val salary=spark.read.format("csv").option("header", "true").load("/user/cloudera/escenario45/spark12/salary.txt");
 tech.registerTempTable("tech");
